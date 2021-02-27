@@ -83,7 +83,8 @@ class MainWindow():
             classes = [""]
             layer_names = net.getLayerNames()
             output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
-            colors = np.random.uniform(0, 255, size=(len(classes), 3))
+            # colors = np.random.uniform(0, 255, size=(len(classes), 3))
+            colors = np.random.uniform(255, 255, size=(len(classes), 3))
             cap = self.cap
             
             ret, frame = cap.read()
@@ -199,5 +200,5 @@ class MainWindow():
                 
 if __name__ == "__main__":
     root = tk.Tk()
-    MainWindow(root, cv2.VideoCapture(1))
+    MainWindow(root, cv2.VideoCapture(0))
     root.mainloop()
